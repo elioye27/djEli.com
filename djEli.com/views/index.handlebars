@@ -1,0 +1,284 @@
+<!--NAVBAR-->
+<nav class="navbar navbar-light col align-items-end" style="background-color: rgb(22, 6, 6);">
+    <!-- Logo Starts -->
+    <div id ="logo">
+        <a class="navbar-brand" href="#home"><img src="assets/images/logo3.jpg" height="30" alt="logo2"/></a>
+        <p class="mb-0"><em>“Committed to Excellent Performance.”</em></p>
+    </div> 
+    <!-- #Logo Ends -->
+
+        
+    <ul>
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#playlist">Playlist</a></li>
+        <li><a href="#blogevent">Events &amp; Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+        
+    <!--SIGN IN MODAL-->
+    <div class="modal fade bd-example-modal-sm" id="signin" tabindex="-1" role="dialog" aria-labelledby="signin form" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header bg text-center text-white py-3" style="background-color: rgb(22, 6, 6);">
+                    <h1 class="text-center login-title">Welcome Back!</h1>
+                </div>
+                <div class="modal-body">
+                    <!--regitstration form-->
+                    <form action="/api/new" method="POST">
+                        <label class="mb-2"><strong>Login</strong></label>
+                        <select name="user_type" class="custom-select mb-3">
+                            <option required><strong>PLEASE SELECT</strong></option>
+                            <option value="volunteer">Login</option>
+                            <option value="volunteer">Pass</option>
+                            <option value="volunteer">Customer</option>
+                            <option value="reserved">List</option>
+                            <option value="volunteer">Viwer</option>
+                        </select>
+                        
+                        <div class="input-group form-group no-border">
+                            <span class="input-group-addon">
+                                <i class="fa fa-phone-square"></i>
+                            </span>
+                            <input type="text" name="phone" class="form-control" placeholder="Phone..." required>
+                        </div>
+                
+                        <hr class="mb-3">
+                        
+                        <div class="input-group form-group no-border">
+                            <span class="input-group-addon">
+                            <i class="oi oi-envelope-closed"></i>
+                            </span>
+                            <input type="email" name="email" class="form-control" placeholder="Email..." required>
+                        </div>
+
+                            <div class="input-group form-group no-border">
+                            <span class="input-group-addon">
+                            <i class="fa fa-user-circle"></i>
+                            </span>
+                            <input id="name" type="text" name="name" class="form-control" placeholder="Pin#..." required>
+                        </div>
+                        
+                        </div> 
+                        <div class="modal-footer">
+                            <button id="abc" type="submit" class="btn btn-dark text-white" value="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<ul class="nav nav-pills nav-header-pills">
+        <button type="button" class="w-25 btn btn-dark text-white btn-lg btn-block mx-auto mb-5" data-toggle="modal" data-target="#register">Book Now</button>
+            <!--  MODALS     -->
+        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register form" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="header text-center text-white py-3" style="background-color: #00C4C2;">
+                        <h4 class="modal-title title-up" id="exampleModalLabel">Book Now</h4>
+                    </div>
+        <div class="modal-body">
+            <!--regitstration form-->
+            <form action="/api/book", method="POST">
+                <input type="text" name="name" class="form-control form-control-lg mb-3" placeholder="Name..." required>
+                <input type="email" name="email"class="form-control form-control-lg mb-3" placeholder="Email Address..." required>
+                <input type="text" name="address" class="form-control form-control-lg mb-3" placeholder="Event Address..." required>
+                <input type="text" name="phone" class="form-control form-control-lg mb-3" placeholder="Phone#..." required>
+                <div>Event Date:
+                <input type="date" name="date"class="form-control form-control-lg mb-3" placeholder="Event Date..." required>
+                Start Time:
+                <input type="number" name="startTime" class="form-control form-control-lg mb-3" placeholder="please only use number e.g...2" required>
+                End Time:
+                <input type="number" name="endTime" class="form-control form-control-lg mb-3" placeholder="please only use number e.g...10" required>
+                Deposit
+                <input type="number" name="deposit" class="form-control form-control-lg mb-3" placeholder="2" required>
+                <textarea name="message" rows="5" class="form-control form-control-lg mb-3" placeholder="Message (Optional)"></textarea>
+                <input type="submit" class="btn btn-dark text-white btn-lg" value="Submit">
+                
+            </form>
+        </div>
+</ul>
+
+<div class = "home-container">
+
+    
+    <!-- overlay djkrane -->
+    <div class="container overlay">
+
+
+    <!-- home banner starts -->
+    <div id="home" class="homeinfo">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+        <div class="fronttext">
+            <h2 class="bgcolor  animated fadeInUpBig"><span class="glyphicon glyphicon-headphones"></span> DJ Eli</h2><br>
+            <p class=" animated fadeInUp">
+                Best DJ in town!<br>
+                Best Price in Town!<br>
+                Serving the Los Angeles, San Fernando Valley, San Bernardino areas!
+
+            </p>
+        </div>
+        </div>
+
+        <div class="col-sm-5 col-xs-12 col-sm-offset-1">
+        <div class="player">
+        {{!-- <img src="assets/images/dj.jpg" class="graphics hidden-xs  animated fadeInRightBig" alt="dj"/> --}}
+            <iframe width="100%" height="180" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/418976572&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+        </div>
+
+    </div>	
+    </div>
+    <!-- home banner ends -->
+
+
+
+    <!-- blockblack -->
+    <div class="blockblack">
+
+    <!-- About Starts -->
+    <div id="about" class="spacer">
+    <h3><span class="glyphicon glyphicon-user"></span> About Me</h3>
+    <div class="row">				
+    <div class="col-lg-4 col-sm-4  col-xs-12">
+    <img src="assets/images/dj.jpg" class="img-responsive" alt="about"/>
+    </div>
+    <div class="col-lg-5 col-sm-8  col-xs-12">
+    <p>I have been in the DJ business since 2010, playing the tones pleasant to my clients. Always on time for my gigs and never disappoints.</p>
+    <blockquote>Simply click on the "Book Now" button above for your next events and I will be there, whether it be: <br>
+        <ul>
+            <li>Wedding</li>
+            <li>Birthday</li>
+            <li>Baby Shower</li>
+            <li>Any others</li>
+        </ul>
+    </blockquote>
+    </div>
+    <div class="col-lg-3 visible-lg">
+    <div class="fb-like-box" data-href="http://www.facebook.com/thebootstrapthemes" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="255"></div>
+    </div>
+    </div>
+    </div>
+    <!-- About Ends -->
+
+
+    <!-- playlist Starts -->
+    <div id="playlist" class="spacer">
+        <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                        <h3><span class="glyphicon glyphicon-list"></span> Playlist</h3>
+                        <iframe width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/381247379&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+                        </div>
+        </div>
+    </div>
+    <!-- #playlist Ends -->
+
+
+    <!--Blog Event Starts-->
+    <div id="blogevent"  class="blogevent spacer">
+    <div class="row">
+
+        <!-- events -->
+        <div class="col-md-6 col-xs-12">
+            <div class="events">
+            <h3><span class="glyphicon glyphicon-calendar"></span> Events</h3>
+            <ul>
+                <li>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-lg-4"><a href="#" data-toggle="modal" data-target="#blogdetail"><img src="assets/images/1.jpg" class="img-responsive" alt="music theme" /></a></div>
+                    <div class="col-xs-12  col-sm-6 col-lg-5 "><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Birthday Party</a></h5><p>This date is already booked and not available.</p></div>
+                    <div class="col-xs-12  col-sm-3 col-lg-3 date"><span id="date"></span></div>
+                </div>
+                </li>
+                <li>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-lg-4"><a href="#" data-toggle="modal" data-target="#blogdetail"><img src="assets/images/2.jpg" class="img-responsive" alt="music theme" /></a></div>
+                    <div class="col-xs-12  col-sm-6 col-lg-5 "><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Wedding Party</a></h5><p>This date is already booked and not available.</p></div>
+                    <div class="col-xs-12  col-sm-3 col-lg-3 date"><span id="date2"></span></div>
+                </div>
+                </li>
+                <li>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-lg-4"><a href="#" data-toggle="modal" data-target="#blogdetail"><img src="assets/images/3.jpg" class="img-responsive" alt="music theme" /></a></div>
+                    <div class="col-xs-12  col-sm-6 col-lg-5 "><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Baby Shower Party</a></h5><p>This date is already booked and not available.</p></div>
+                    <div class="col-xs-12  col-sm-3 col-lg-3 date"><span id="date3"></span></div>
+                </div>
+                </li>
+                <li>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-lg-4"><a href="#" data-toggle="modal" data-target="#blogdetail"><img src="assets/images/4.jpg" class="img-responsive" alt="music theme" /></a></div>
+                    <div class="col-xs-12  col-sm-6 col-lg-5 "><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Birthday Party</a></h5><p>This date is already booked and not available.</p></div>
+                    <div class="col-xs-12  col-sm-3 col-lg-3 date"><span id="date4"></span></div>
+                </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <!-- events -->
+
+        <!-- blog -->
+        <div class="col-md-5 col-md-offset-1 col-xs-12">
+            <div class="ourblog">
+            <h3><span class="glyphicon glyphicon-book"></span> Other Services Offered</h3>
+                <ul class="row">
+                <li class="row"><a href="#" data-toggle="modal" data-target="#blogdetail" class="col-xs-12 col-sm-3 col-lg-4"><img src="assets/images/3.jpg" class="img-responsive" alt="music theme" /></a>
+                <div class="blogtext col-xs-12 col-sm-9  col-lg-8"><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Web/App Design</a></h5>
+                {{!-- <small>Posted on: Jan 1, 2014</small>
+                <p>Typewriter photo booth vinyl post-ironic, literally keffiyeh locavore tofu lomo pug Odd Future. </p> --}}
+                </div>              
+                </li>
+                <li class="row"><a href="#" data-toggle="modal" data-target="#blogdetail" class="col-xs-12 col-sm-3 col-lg-4"><img src="assets/images/4.jpg" class="img-responsive" alt="music theme" /></a>
+                <div class="blogtext col-xs-12 col-sm-9  col-lg-8"><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Party Decorations</a></h5>
+                {{!-- <small>Posted on: Jan 1, 2014</small>
+                <p>Typewriter photo booth vinyl post-ironic, literally keffiyeh locavore tofu lomo pug Odd Future. </p> --}}
+                </div>              
+                </li>
+                <li class="row"><a href="#" data-toggle="modal" data-target="#blogdetail" class="col-xs-12 col-sm-3 col-lg-4"><img src="assets/images/1.jpg" class="img-responsive" alt="music theme" /></a>
+                <div class="blogtext col-xs-12 col-sm-9  col-lg-8"><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Chairs/Table rentals</a></h5>
+                {{!-- <small>Posted on: Jan 1, 2014</small>
+                <p>Typewriter photo booth vinyl post-ironic, literally keffiyeh locavore tofu lomo pug Odd Future. </p> --}}
+                </div>              
+                </li>
+                <li class="row"><a href="#" data-toggle="modal" data-target="#blogdetail" class="col-xs-12 col-sm-3 col-lg-4"><img src="assets/images/2.jpg" class="img-responsive" alt="music theme" /></a>
+                <div class="blogtext col-xs-12 col-sm-9  col-lg-8"><h5><a href="#" data-toggle="modal" data-target="#blogdetail">Small Chops/Finger Food</a></h5>
+                {{!-- <small>Posted on: Jan 1, 2014</small>
+                <p>Typewriter photo booth vinyl post-ironic, literally keffiyeh locavore tofu lomo pug Odd Future. </p> --}}
+                </div>              
+                </li>          
+                </ul>
+                </div>
+
+        </div>
+        <!-- blog -->
+
+    </div>
+    </div>
+    <!--Blog Events Ends-->
+
+
+<!--Contact Starts-->
+<div id="contact" class="spacer">
+<div class="contactform center">
+<h3><span class="glyphicon glyphicon-envelope"></span> Email</h3><h5>elioye27@gmail.com</h5><br>
+<h3><span class="glyphicon glyphicon-phone"></span> Phone Number</h3><h5>818.266.6238</h5>
+  <div class="row">      
+      <div class="col-sm-6 col-sm-offset-3 ">
+      <h4>Get in touch or<br><b>Just say Hello!</b></h4>
+        {{msg}}
+        <form method="POST" action="send">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="phone" placeholder="Phone" required>
+            <textarea name="message" rows="5" placeholder="Message"></textarea>
+            <button type="submit" class="btn btn-warning bgcolor">Send</button>
+        </form>
+      </div>
+  </div><br><br><br>
+
+
+
+            
+

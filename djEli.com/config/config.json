@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "27Manlekey!",
+    "database": "sequelize_djElibook",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+
+  "production": {
+    "username": "pik9pm9lcryfnrkl",
+    "password": "qef42qnnz8qlk0xg",
+    "database": "yzxxju4cf37pzosn",
+    "host": "x3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "use_env_variable": "mysql://pik9pm9lcryfnrkl:qef42qnnz8qlk0xg@x3ztd854gaa7on6s.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/yzxxju4cf37pzosn"
+  }
+}

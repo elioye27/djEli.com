@@ -1,0 +1,89 @@
+<!--NAVBAR-->
+ <nav class="navbar navbar-light col align-items-end" style="background-color: rgb(27, 20, 41);">
+     <blockquote class="blockquote">
+         <!-- Logo Starts -->
+        <img src="assets/images/logo2.jpg" height="30" alt="logo2"/>
+        <!-- #Logo Ends -->
+     </blockquote>
+     
+     <a class="btn btn-dark text-white btn-lg mb-2" href="/" role="button">Log Out</a>
+ </nav>
+ <!--MAIN CONTENT-->
+ <div class="contributor-container">
+     <h1 class="display-1 text-center text-white py-5" id="title">Welcome <span id="username"></span>!</h1>
+     <div class="col-sm">
+
+
+        <ul class="nav nav-pills nav-header-pills">
+            <button type="button" class="w-25 btn btn-dark text-white btn-lg btn-block mx-auto mb-5" data-toggle="modal" data-target="#register">Add New Item</button>
+                <!--  MODALS     -->
+            <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register form" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="header text-center text-white py-3" style="background-color: #00C4C2;">
+                            <h4 class="modal-title title-up" id="exampleModalLabel">Add New Item</h4>
+                        </div>
+            <div class="modal-body">
+                <!--regitstration form-->
+               <form action="/api/book" method="POST">
+                        <input type="text" name="name" class="form-control form-control-lg mb-3" placeholder="Name...">
+                        <input type="email" name="email"class="form-control form-control-lg mb-3" placeholder="Email Address...">
+                        <input type="text" name="event" class="form-control form-control-lg mb-3" placeholder="Event Address...">
+                        <input type="text" name="phone" class="form-control form-control-lg mb-3" placeholder="Phone#...">
+                    <div>Event Date:
+                        <input type="date" name="date"class="form-control form-control-lg mb-3" placeholder="Event Date...">
+                        Start to End Time:
+                        <input type="text" name="time" class="form-control form-control-lg mb-3" placeholder="2pm to 8pm...">
+                        Hours
+                        <input type="number" name="hours" class="form-control form-control-lg mb-3" placeholder="2">
+                    </div>
+                        <input type="submit" id= "btn" class="btn btn-dark text-white btn-lg" value="Submit">
+            </form>
+        </ul>
+
+
+
+       <!--TABLE-->
+         <table class="table table-bordered table-hover text-center" id="table">
+            
+             <thead class="thead-dark text-white">
+                 <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Name</th>
+                     <th scope="col">Email Address</th>
+                     <th scope="col">Phone#</th>
+                     <th scope="col">Event Address</th>
+                     <th scope="col">Event Date</th>
+                     <th scope="col">Start Time</th>
+                     <th scope="col">End Time</th>
+                     <th scope="col">Hours</th>
+                     <th scope="col">Totoal Amount</th>
+                     <th scope="col">Deposit</th>
+                     <th scope="col">Balance Due</th>
+                     <th scope="col">Miles</th>
+                     <th scope="col">Edit/Delete</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <th scope="row">Sample</th>
+                     <td>John Doe</td>
+                     <td>j@gmail.com</td>
+                     <td>818-999-1000</td>
+                     <td>123 Lane Street</td>
+                     <td>2017-12-30</td>
+                     <td>2:00 PM</td>
+                     <td>8:00 PM</td>
+                     <td>6</td>
+                     <td>$200</td>
+                     <td>$100</td>
+                     <td>$100</td>
+                     <td>13 mi</td>
+                     <td><button class="btn btn-dark text-white" id="food-edit">Edit</button>   
+                    <button class="btn btn-dark text-white" id="food-delete">Delete</button></td>
+
+                 </tr>
+             </tbody>
+        </table>
+    </div>
+
